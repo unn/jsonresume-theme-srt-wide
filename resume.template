@@ -7,7 +7,7 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
 	<style>
 	{{css}}
 	</style>
@@ -25,7 +25,7 @@
 
 				<div class="yui-u">
 					<div class="contact-info">
-						<h3><a id="pdf" href="#">Download as PDF</a></h3>
+						<!--h3><a id="pdf" href="#">Download as PDF</a></h3-->
 						<h3><a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a></h3>
 						<h3>{{resume.basics.phone}}</h3>
 					</div><!--// .contact-info -->
@@ -37,20 +37,17 @@
 			<div id="yui-main">
 				<div class="yui-b">
 
-					<div class="yui-gf">
 						{{#if resume.basics.summary}}
 						<div class="yui-u first">
-							<h2>Profile</h2>
+							<h2>Summary</h2>
 						</div>
 						<div class="yui-u">
 							<p class="enlarge">
-								{{resume.basics.summary}} 
+								{{resume.basics.summary}}
 							</p>
 						{{/if}}
 						</div>
-					</div><!--// .yui-gf -->
 
-					<div class="yui-gf">
 						{{#if resume.skills.length}}
 						<div class="yui-u first">
 							<h2>Skills</h2>
@@ -70,10 +67,8 @@
 							    {{/each}}
 						</div>
 						{{/if}}
-					</div><!--// .yui-gf -->
 
 					{{#if resume.work.length}}
-					<div class="yui-gf">
 						<div class="yui-u first">
 							<h2>Experience</h2>
 						</div><!--// .yui-u -->
@@ -87,7 +82,7 @@
 							{{/if}}
 								<h2>{{company}}</h2>
 								<h3>{{position}}</h3>
-								<h4>{{startDate}} - 
+								<h4>{{startDate}} -
 								{{#if endDate}}
                                                                 {{endDate}}
 								{{^}}
@@ -100,30 +95,27 @@
 							</div>
 							{{/each}}
 						</div><!--// .yui-u -->
-					</div><!--// .yui-gf -->
 					{{/if}}
-
-					<div class="yui-gf">
-						{{#if resume.languages.length}}
+						{{#if resume.volunteer.length}}
 						<div class="yui-u first">
-							<h2>Languages</h2>
+							<h2>Open Source</h2>
 						</div>
 						<div class="yui-u">
-							    {{#each resume.languages}}
-								<div class="talent">
-								        {{#language}}
+							    {{#each resume.volunteer}}
+								        {{#organization}}
 									<h2>{{.}}</h2>
-								        {{/language}}
-							                {{#fluency}}
+								        {{/organization}}
+							                {{#position}}
 									<p>{{.}}</p>
-							                {{/fluency}}
-								</div>
+							                {{/position}}
+									<p>{{summary}}<br>
+							        {{#each highlights}}
+									&bull; {{.}}<br>
+							        {{/each}}</p>
 							    {{/each}}
 						</div>
 						{{/if}}
-					</div><!--// .yui-gf -->
 					{{#if resume.education}}
-					<div class="yui-gf last">
 						<div class="yui-u first">
 							<h2>Education</h2>
 						</div>
@@ -141,7 +133,7 @@
 							<br>
 						</div>
 						{{/each}}
-					</div><!--// .yui-gf -->
+
 					{{/if}}
 				</div><!--// .yui-b -->
 			</div><!--// yui-main -->
